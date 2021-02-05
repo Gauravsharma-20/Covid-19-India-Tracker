@@ -1,0 +1,77 @@
+.covid-table {
+  border-collapse: separate;
+  border-spacing: 6px;
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  color: var(--table-font-color);
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --data-color: #f3f4f4;
+  --data-hover-color: #e8e8e9;
+  --header-color: #dddede;
+  --header-hover-color: #dddede;
+  --table-font-color:black;
+}
+
+th {
+  background-color: var(--header-color);
+  border-radius: 6px;
+  padding: 8px 11px;
+  text-align: center;
+}
+
+td {
+  background-color: var(--data-color);
+  border-radius: 6px;
+  padding: 8px 11px;
+  font: 15px;
+  text-align: center;
+}
+
+.table-data-row:hover {
+  transform: scale(1.01);
+  transition: 0.3s;
+  cursor: pointer; 
+}
+
+td .table-data-delta {
+  font-size: 11px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.table-data-delta{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+}
+
+.table-data-delta i{
+  font-size: 10px;
+  padding-top: 3px;
+}
+
+/*
+th:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+  background-color: var(--header-hover-color);
+  cursor: pointer; 
+}
+
+table tbody {
+   display:block; 
+   max-height:650px; 
+   overflow-y:scroll;
+   font-size: 12px bold;
+}
+
+table thead, table tbody tr { 
+  display:table;  
+  width:100%; 
+  table-layout:fixed; 
+}
+*/
