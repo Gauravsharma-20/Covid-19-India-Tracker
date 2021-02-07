@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
 import Table from '../Table/Table';
 import Cards from '../Cards/Cards';
@@ -8,15 +9,15 @@ import NotFound from '../utils/NotFound';
 import './StateDetail.css';
 
 const StateDetail = (props) => {
-    console.log(props.match.params.stateCode);
-    const [stateData, setStateData] = useState(JSON.parse(sessionStorage.stateData));
+    //console.log(props.match.params.stateCode);
+    //const [stateData, setStateData] = useState(JSON.parse(sessionStorage.stateData));
     const currState = props.match.params.stateCode;
     if(!(currState in StateCodes)){
       return <NotFound />;
     }
 
 
-    console.log(props.stateData[currState]);
+    //console.log(props.stateData[currState]);
     return (
     <React.Fragment>
       <div className="StateDetailTitle">
@@ -34,4 +35,10 @@ const StateDetail = (props) => {
     );
 };
 
-export default StateDetail;
+const mapStateToProps = state => {
+  return {stateData: state.stateData};
+};
+export default connect(mapStateToProps)(StateDetail);
+
+/*
+*/
