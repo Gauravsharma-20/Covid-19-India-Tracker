@@ -1,0 +1,41 @@
+:root{
+
+  --search-bar-color:#fff;
+  --search-bar-font-color: #6c757d;
+  --search-bar-border-color: rgba(235, 233, 233, 0.418);
+  --search-suggestions-color: whitesmoke;
+  --search-suggestions-hover-color: #c2c6ca;
+  --search-suggestions-key-color: pink;
+
+
+  --notification-background-color:  #f3f4f4;
+  --notification-panel-color: #e6e7e7;
+  --notfication-timestamp-color: rgb(122, 121, 121);
+  --notification-update-color: #017bb4d0;
+
+
+  --default-cards-hover-color: #ededf8;
+  --cards-confirmed-color: rgba(255, 7, 57, 0.87);
+  --cards-confirmed-light-color: rgba(255, 7, 57, 0.562);
+  --cards-confirmed-hover-color: rgba(255, 7, 58, 0.125);
+  --cards-active-color: rgba(0, 123, 255, 0.815);
+  --cards-active-hover-color: rgba(0, 123, 255, 0.125);
+  --cards-recoverd-color: rgba(40, 167, 70, 0.979);
+  --cards-recoverd-light-color: rgba(40, 167, 70, 0.623);
+  --cards-recoverd-hover-color:  rgba(40, 167, 69, 0.125) ;
+  --cards-deceased-color:  rgba(108, 117, 125, 0.863);
+  --cards-deceased-light-color:  rgba(108, 117, 125, 0.514);
+  --cards-deceased-hover-color: rgba(108, 117, 125, 0.125);
+
+  --data-color: #f3f4f4;
+  --data-hover-color: #e8e8e9;
+  --header-color: #dddede;
+  --header-hover-color: #dddede;
+  --table-font-color:black;
+
+  --covid-logo-color: #9966ff;
+  --icon-search-bar: #596168; 
+  --icon-bell-color: #3399ff;
+  --icon-moon-color: #8c1aff;
+  --icon-sun-color: #ffbc05;
+}

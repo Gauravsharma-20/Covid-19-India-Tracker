@@ -1,0 +1,52 @@
+.card-item {
+  padding: 40px 60px;
+  border-radius: 8px;
+}
+
+.card-item:hover {
+  background-color: var(--default-hover-color);
+  transition: 0.6s;
+}
+
+.card-item h5, h4, h3{
+  display: flex;
+  justify-content: center;
+}
+
+/*Color Schema for Primary Cards*/
+.Confirmed h3,.Confirmed h4 {
+  color: var(--cards-confirmed-color);
+}
+.Confirmed h5 {
+  color: var(--cards-confirmed-light-color);
+}
+.Confirmed:hover {
+  background-color: var(--cards-confirmed-hover-color);
+}
+
+.Active h3,.Active h4 {
+  color: var(--cards-active-color);
+}
+.Active:hover {
+  background-color: var(--cards-active-hover-color);
+}
+
+.Recovered h3, .Recovered h4{
+  color: var(--cards-recoverd-color);
+}
+.Recovered h5{
+  color: var(--cards-deceased-light-color);
+}
+.Recovered:hover {
+  background-color: var(--cards-recoverd-hover-color);
+}
+
+.Deceased h3, .Deceased h4 {
+  color:var(--cards-deceased-color);
+}
+.Deceased h5 {
+  color:var(--cards-deceased-light-color);
+}
+.Deceased:hover {
+  background-color:var(--cards-deceased-hover-color);
+}

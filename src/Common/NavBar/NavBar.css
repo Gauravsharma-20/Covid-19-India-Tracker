@@ -1,0 +1,39 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.covid19-logo {
+  padding-top: 20px;
+  font-size: 30px;
+  font-weight: 20px;
+  color: var(--covid-logo-color)
+}
+
+.navbar-utils {
+  display: flex;
+}
+
+.navbar-container i{
+  padding: 20px;
+  font-size: 30px;
+}
+
+.navbar-container i:hover, .covid19-logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fa-moon {
+  color: var(--icon-moon-color);
+}
+
+.fa-sun {
+  color: var(--icon-sun-color);
+}
+
+.hide {
+  display: none;
+}

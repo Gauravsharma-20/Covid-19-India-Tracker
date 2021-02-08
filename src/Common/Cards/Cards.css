@@ -1,0 +1,11 @@
+.cards {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.fa {
+  padding-left: 5px;
+  padding-top: 2px;
+}

@@ -1,0 +1,49 @@
+.fa-bell {
+  color: var(--icon-bell-color);
+}
+
+.notification{
+  font-family:Arial, sans-serif;
+  position:absolute;
+  top: 65px; 
+  right: 4%;
+  width: 25rem;
+  height: 60vh;
+  border-radius: 8px;
+  background-color: var(--notification-background-color);
+  box-shadow:  2px 8px 6px rgb(0 0 0 / 30%);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.notification::-webkit-scrollbar { 
+  width: 4px;
+  background: transparent;
+}
+
+.notificationPanel {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--notification-panel-color);
+  padding-bottom: 4px;
+  border-radius: 4px;
+  margin: 10px;
+}
+.timestamp {
+  font-size: 11px;
+  padding-left: 2px;
+  color: var(--notfication-timestamp-color);
+  font-weight: 550;
+}
+
+.notificationUpdate {
+  padding-left: 2px;
+  font-size: 14px bold;
+  color: var(--notification-update-color);
+  
+}
+
+.hide {
+  display: none;
+}
+

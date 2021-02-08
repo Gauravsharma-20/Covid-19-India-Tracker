@@ -1,0 +1,14 @@
+.vaccinatedContainer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.vaccinated {
+  display:inline-block;
+  color: #ff80b3;
+  background-color: rgba(219,85,129,.12549019607843137);
+  border-radius: 5px;
+  padding: 4px;
+}
+

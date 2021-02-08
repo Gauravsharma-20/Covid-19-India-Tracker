@@ -1,0 +1,19 @@
+.homePrimaryTitle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.homePrimaryTitle h1{
+  font-size: 30px;
+  color:#9966ff;
+  background-color: #9966ff31;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .homePrimaryTitle h1{
+    font-size: 22px;
+  }
+}
