@@ -2,6 +2,7 @@ import React, { useEffect, useState , useRef} from 'react';
 import { Link } from 'react-router-dom';
 
 import StateCodes from '../../utils/StateCodes.json';
+import StateAndDistrictCodes from '../../utils/StatesAndDistricts.json';
 
 import './SearchBar.css';
 
@@ -39,7 +40,7 @@ const SearchBar = () => {
 
     const timerId = setTimeout(() => {
       setDebouncedTerm(term);
-    },50);
+    },200);
 
     return () => {
       clearTimeout(timerId);
@@ -47,16 +48,28 @@ const SearchBar = () => {
   }, [term]);
 
 
-  //Use Debounced term
+  //Use Debounced term for search results
   useEffect(() => {
 
     const searchResults = Object.entries(StateCodes).filter(
       ([key,value]) => {
 
-          if(key!=='TT'&&key!=='UT'&&value.toLowerCase().startsWith(debouncedTerm.toLowerCase())) {
+          if(key!=='TT'&&value.toLowerCase().startsWith(debouncedTerm.toLowerCase())) {
             return [key,value];
           }
       });
+    
+    // const districtSearchResults = Object.entries(StateAndDistrictCodes.states).filter(
+    //   ([key,value]) => {
+    //     const districtSuggestions = value.filter(
+    //       (val) => {
+    //         if(val.toLowerCase().startsWith(debouncedTerm.toLowerCase())) {
+    //           return [key,value];
+    //         }
+    //       }
+    //     );
+    //     searchResults.push(districtSuggestions);
+    //   });
       
     setResults(searchResults);
   }, [debouncedTerm]);

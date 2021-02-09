@@ -13,7 +13,9 @@ class Table extends React.Component {
     if(!this.props.data || this.props.data===undefined) {
       return <Loader />;
     }
+    
     const linkFlag = this.props.primaryTitle!='Districts'? true:false;
+
     return (
       <div className="tableFixHead">
         <Suspense fallback={<Loader />}>

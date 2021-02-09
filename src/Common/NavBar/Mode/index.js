@@ -1,55 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../NavBar.css';
 
-class Mode extends React.Component {
 
-  constructor(props) {
-    super(props);
+const darkModeIcon = 'fas fa-moon';
+const lightModeIcon = 'fas fa-sun';
 
-    this.state = {
-      currMode: false,
-      modeIcon: 'fas fa-moon',
-    };
 
-  }
+const Mode = () =>{
 
-    handleClick = () => {
-    
-    if(this.state.currMode) {
-      //Dark Mode
-      document.body.style.backgroundColor = '#161625';
-      document.documentElement.style.setProperty('--data-color', '#25253f');
-      document.documentElement.style.setProperty('--header-color', '#41416b');
-      document.documentElement.style.setProperty('--search-bar-color', '#e8e8e9');
-      document.documentElement.style.setProperty('--table-font-color', '#cececf');
-      document.documentElement.style.setProperty('--suggestion-box-color', 'white');
+  const [darkMode, setDarkMode] = useState(false);
+  const [modeIcon, setModeIcon] = useState(darkModeIcon);
 
-      this.setState({modeIcon: 'fas fa-sun'});
+  const theme = {
+    dark: {
+      bodyColor: '#161625',
+      dataColor: '#25253f',
+      headerColor: '#41416b',
+      searchBarColor: '#e8e8e9',
+      tableFontColor: '#cececf',
+      suggestionBoxColor: 'white',
+      modeIcon: lightModeIcon,
+    }, 
+    light: {
+      bodyColor: 'white',
+      dataColor: '#f3f4f4',
+      headerColor: '#dddede',
+      searchBarColor: '#fff',
+      tableFontColor: 'black',
+      suggestionBoxColor: 'white',
+      modeIcon: darkModeIcon,
+    }
+  };
+
+
+  const handleClick = () => {
+  
+    if(darkMode) {
+      document.body.style.backgroundColor = theme.dark.bodyColor;
+      document.documentElement.style.setProperty('--data-color', theme.dark.dataColor);
+      document.documentElement.style.setProperty('--header-color', theme.dark.headerColor);
+      document.documentElement.style.setProperty('--search-bar-color', theme.dark.searchBarColor);
+      document.documentElement.style.setProperty('--table-font-color', theme.dark.tableFontColor);
+      document.documentElement.style.setProperty('--suggestion-box-color', theme.dark.suggestionBoxColor);
+
+      setModeIcon(theme.dark.modeIcon);
       
     } else {
-      //Light Mode
-      document.body.style.backgroundColor = 'white';
-      document.documentElement.style.setProperty('--data-color', '#f3f4f4');
-      document.documentElement.style.setProperty('--header-color', '#dddede');
-      document.documentElement.style.setProperty('--search-bar-color', '#fff');
-      document.documentElement.style.setProperty('--table-font-color', 'black');
-      document.documentElement.style.setProperty('--suggestion-box-color', 'white');
+      document.body.style.backgroundColor = theme.light.bodyColor;
+      document.documentElement.style.setProperty('--data-color', theme.light.dataColor);
+      document.documentElement.style.setProperty('--header-color', theme.light.headerColor);
+      document.documentElement.style.setProperty('--search-bar-color', theme.light.searchBarColor);
+      document.documentElement.style.setProperty('--table-font-color', theme.light.tableFontColor);
+      document.documentElement.style.setProperty('--suggestion-box-color', theme.light.suggestionBoxColor);
 
-      this.setState({modeIcon: 'fas fa-moon'});
+      setModeIcon(theme.light.modeIcon);
     }
 
-    this.setState({currMode: !this.state.currMode});
+    setDarkMode(!darkMode);
   };
 
-  render() {
 
-    return (
-      <div className="mode">
-        <i className={this.state.modeIcon} onClick={this.handleClick}></i>
-      </div>
-    );
-  };
-}
+  return (
+    <div className="mode">
+      <i className={modeIcon} onClick={handleClick}></i>
+    </div>
+  );
+};
 
 export default Mode;

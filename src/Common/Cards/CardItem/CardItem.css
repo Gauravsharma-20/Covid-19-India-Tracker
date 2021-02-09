@@ -35,7 +35,7 @@
   color: var(--cards-recoverd-color);
 }
 .Recovered h5{
-  color: var(--cards-deceased-light-color);
+  color: var(--cards-recoverd-light-color);
 }
 .Recovered:hover {
   background-color: var(--cards-recoverd-hover-color);

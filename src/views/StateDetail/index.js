@@ -11,27 +11,27 @@ import './StateDetail.css';
 
 const StateDetail = (props) => {
 
-    const currState = props.match.params.stateCode;
+  const currState = (props.match.params.stateCode).toUpperCase();
+  
+  if(!(currState in StateCodes)){
+    return <NotFound />;
+  }
 
-    if(!(currState in StateCodes)){
-      return <NotFound />;
-    }
-
-    return (
-    <React.Fragment>
-      <div className="StateDetailTitle">
-        <h1>{StateCodes[currState]}</h1>
-      </div>
-      <Cards 
-        data = {props.stateData[currState]?.total}
-        delta = {props.stateData[currState]?.delta7}
+  return (
+  <React.Fragment>
+    <div className="StateDetailTitle">
+      <h1>{StateCodes[currState]}</h1>
+    </div>
+    <Cards 
+      data = {props.stateData[currState]?.total}
+      delta = {props.stateData[currState]?.delta7}
+    />
+    <Table 
+        data = {props.stateData[currState]?.districts}
+        primaryTitle='Districts'
       />
-      <Table 
-          data = {props.stateData[currState]?.districts}
-          primaryTitle='Districts'
-        />
-    </React.Fragment>
-    );
+  </React.Fragment>
+  );
 };
 
 

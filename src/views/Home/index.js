@@ -7,35 +7,30 @@ const Table = lazy(()=>import('../../Common/Table'));
 const Cards = lazy(()=>import('../../Common/Cards'));
 
 
-class Home extends React.Component {
-  render() {
-    console.log(this.props.stateData);
-    return (
-      <div>
-        <Suspense fallback={<Loader />}>
-        <Cards 
-          data = {this.props.stateData.TT?.total}
-          delta = {this.props.stateData.TT?.delta7}
-          />
-        </Suspense>
-        <Suspense fallback={<Loader />}>
-        <Table
-          data ={this.props.stateData}
-          primaryTitle='State/UT'
-          />
-        </Suspense>
-      </div>
-    );
-  };
-}
+const Home = (props) => {
+    
+  return (
+    <div>
+      <Suspense fallback={<Loader />}>
+      <Cards 
+        data = {props.stateData.TT?.total}
+        delta = {props.stateData.TT?.delta7}
+        />
+      </Suspense>
+      <Suspense fallback={<Loader />}>
+      <Table
+        data ={props.stateData}
+        primaryTitle='State/UT'
+        />
+      </Suspense>
+    </div>
+  );
+};
+
 
 const mapStateToProps = state => {
   return { stateData: state.stateData };
 };
 
+
 export default connect(mapStateToProps)(Home);
-
-
-/*
-
-*/
