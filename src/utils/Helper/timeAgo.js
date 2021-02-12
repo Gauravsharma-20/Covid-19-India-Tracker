@@ -1,6 +1,6 @@
 
 const timeAgo = (date) => {
-  let seconds = Math.floor((new Date() - date) / 1000);
+  let seconds = Math.floor((new Date() - date)/1000);
   let interval = seconds / 31536000;
 
   if (interval > 1) {

@@ -1,6 +1,7 @@
 # Covid-19 Tracker
 Covid-19 Tracking applciation to see significant data pertaining to the disease with latest notfication and weekly changes in different states districts of India.
 
+### Deployed At: https://brave-mcnulty-9912d2.netlify.app/
 ## Instruction to Run
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ### Available Scripts

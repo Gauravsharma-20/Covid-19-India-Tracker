@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import Loader from '../../utils/Loader';
 
+import './Home.css';
+
 const Table = lazy(()=>import('../../Common/Table'));
 const Cards = lazy(()=>import('../../Common/Cards'));
 
@@ -11,6 +13,9 @@ const Home = (props) => {
     
   return (
     <div>
+      <div className="homePrimaryTitle">
+        <h1>INDIA</h1>
+      </div>
       <Suspense fallback={<Loader />}>
       <Cards 
         data = {props.stateData.TT?.total}

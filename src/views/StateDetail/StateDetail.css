@@ -6,8 +6,8 @@
 
 .StateDetailTitle h1{
   font-size: 30px;
-  color:#9966ff;
-  background-color: #9966ff31;
+  color:var(--state-detail-title-color);
+  background-color: var(--state-detail-title-background-color);
   border-radius: 10px;
   padding: 10px 15px;
 }

@@ -13,6 +13,11 @@
   --notfication-timestamp-color: rgb(122, 121, 121);
   --notification-update-color: #017bb4d0;
 
+  --home-primary-title-color: #ffbc05;
+  --home-primary-title-background-color: #ffbc052f;
+  --state-detail-title-color: #9966ff;
+  --state-detail-title-background-color: #9966ff31;
+
 
   --default-cards-hover-color: #ededf8;
   --cards-confirmed-color: rgba(255, 7, 57, 0.87);

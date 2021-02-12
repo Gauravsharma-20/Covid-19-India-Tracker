@@ -1,19 +1,19 @@
 .homePrimaryTitle {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .homePrimaryTitle h1{
-  font-size: 30px;
-  color:#9966ff;
-  background-color: #9966ff31;
+  font-size: 33px;
+  color: var(--home-primary-title-color);
+  background-color: var(--home-primary-title-background-color);
   border-radius: 10px;
-  padding: 10px 15px;
+  padding: 10px 23px;
 }
 
 @media only screen and (max-width: 1000px) {
   .homePrimaryTitle h1{
-    font-size: 22px;
+    font-size: 25px;
   }
 }

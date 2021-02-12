@@ -8,10 +8,14 @@ import timeAgo from '../../../utils/Helper/timeAgo';
 import './Notification.css';
 
 
+const bellIconInactive = 'far fa-bell';
+const bellIconActive = 'fa fa-bell';
+
+
 const NotificationComponent = (props) => {
 
   const [open, setOpen] = useState(false);
-  const [bellIcon, setBellIcon] = useState('far fa-bell')
+  const [bellIcon, setBellIcon] = useState(bellIconInactive)
   const notficationRef = useRef();
   
 
@@ -39,17 +43,18 @@ const NotificationComponent = (props) => {
     props.fetchNotificationData();
   }, []);
 
-  useEffect(()=>setBellIcon(open?'fa fa-bell':'far fa-bell'), [open]);
+  useEffect(()=>setBellIcon(open?bellIconActive:bellIconInactive), [open]);
 
 
   const notificationPanel = props.notificationData.slice(0).reverse().map((noti) => {
-    const timestamp = timeAgo(noti.timestamp*1000);
+    console.log(noti.timestamp);
+    const notificationTimestamp = timeAgo(noti.timestamp*1000);
     const notificationUpdate = noti.update;
     
     return (
       <div className="notificationPanel" key={notificationUpdate}>
         <div className="timestamp">
-          {`${timestamp} ago`}
+          {`${notificationTimestamp} ago`}
         </div>
         <div className="notificationUpdate">
           {notificationUpdate}
