@@ -79,6 +79,11 @@
     width: 17rem;
   }
   .suggestions-container {
-    width: 18rem;
+    width: 17rem;
+    font-size: 16px;
+  }
+  .fa-arrow-circle-right {
+    font-size: 12px !important;
+    padding-right: 3px !important;
   }
 }

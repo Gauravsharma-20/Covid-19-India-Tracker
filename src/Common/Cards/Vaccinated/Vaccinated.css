@@ -1,13 +1,13 @@
 .vaccinatedContainer {
   display: flex;
   justify-content: center;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 
 .vaccinated {
   display:inline-block;
-  color: #ff80b3;
-  background-color: rgba(219,85,129,.12549019607843137);
+  color: var(--cards-vaccinated-color);
+  background-color: var(--cards-vaccinated-background-color);
   border-radius: 5px;
   padding: 4px;
 }

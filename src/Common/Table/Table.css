@@ -46,6 +46,33 @@ td .table-data-delta {
   padding-top: 3px;
 }
 
+.delta-switch {
+  display: flex;
+  justify-content: space-between;
+}
+.delta-switch button {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-left: 6px;
+  padding: 0px 10px;
+  color: var(--table-font-color);
+  background-color: var(--header-color);
+}
+.delta-switch button:hover {
+  transform: scale(1.04);
+  background-color: var(--data-color);
+  cursor: pointer;
+}
+.delta-switch h5 {
+  background-color: var(--data-color);
+  color: var(--table-font-color);
+  font-weight: 100;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  padding: 3px 8px;
+}
+
 /*
 th:hover {
   transform: scale(1.03);

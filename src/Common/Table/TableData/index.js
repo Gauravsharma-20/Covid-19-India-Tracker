@@ -8,7 +8,6 @@ class TableData extends React.Component {
 
 
   render() {
-    //console.log(this.props.data);
     const TableContent = Object.entries(this.props.data).map(
       ([key,value]) => {
         
@@ -34,11 +33,13 @@ class TableData extends React.Component {
         const caseFatalityRatio = 100*(deceased/confirmed);
         const testPositivityRatio = 100*(confirmed/tested);
 
-        const confirmedDelta = value.delta7?.confirmed;
-        const recoverdDelta = value.delta7?.recovered;
-        const deceasedDelta = value.delta7?.deceased;
-        const testedDelta = value.delta7?.tested;
-        const vaccinatedDelta = value.delta7?.vaccinated;
+        let deltaDays = this.props.deltaDays===7? 'delta7':'delta';
+
+        const confirmedDelta = value[deltaDays]?.confirmed;
+        const recoverdDelta = value[deltaDays]?.recovered;
+        const deceasedDelta = value[deltaDays]?.deceased;
+        const testedDelta = value[deltaDays]?.tested;
+        const vaccinatedDelta = value[deltaDays]?.vaccinated;
 
 
         return (
@@ -125,11 +126,7 @@ class TableData extends React.Component {
 }
 export default TableData;
 
-/*
-<div className="data-button-additional">
-          <button onclick={`/state/:${key}`} type="button">Move to: {key}</button>
-      </div>
-      
+/*    
 const {
           confirmed: confirmedDelta , 
           recovered: recoverdDelta, 
