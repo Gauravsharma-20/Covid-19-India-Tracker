@@ -44,22 +44,36 @@ const NotificationComponent = (props) => {
   }, []);
 
   useEffect(()=>setBellIcon(open?bellIconActive:bellIconInactive), [open]);
-
+  let currDay,primaryDateFlag;
 
   const notificationPanel = props.notificationData.slice(0).reverse().map((noti) => {
-    console.log(noti.timestamp);
     const notificationTimestamp = timeAgo(noti.timestamp*1000);
     const notificationUpdate = noti.update;
+    const date = new Date(noti.timestamp*1000);
+    const newMonth = date.toLocaleString('default', { month: 'short' });
+    const newDay = date.getDate();
+
+    if(newDay!==currDay) {
+      currDay = newDay;
+      primaryDateFlag = true;
+    } else {
+      primaryDateFlag = false;
+    }
     
     return (
-      <div className="notificationPanel" key={notificationUpdate}>
-        <div className="timestamp">
-          {`${notificationTimestamp} ago`}
+      <React.Fragment key={currDay+notificationUpdate}>
+        <div className="primaryDate">
+            {primaryDateFlag===true? `${currDay} ${newMonth}`: ''}
         </div>
-        <div className="notificationUpdate">
-          {notificationUpdate}
+        <div className="notificationPanel">
+          <div className="timestamp">
+            {`${notificationTimestamp} ago`}
+          </div>
+          <div className="notificationUpdate">
+            {notificationUpdate}
+          </div>
         </div>
-    </div>
+      </React.Fragment>
     );
   });
 

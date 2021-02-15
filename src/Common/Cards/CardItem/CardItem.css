@@ -1,6 +1,7 @@
 .card-item {
   padding: 40px 60px;
   border-radius: 8px;
+  letter-spacing: 0.5px;
 }
 
 .card-item:hover {

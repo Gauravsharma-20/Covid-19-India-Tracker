@@ -9,12 +9,13 @@
 
 
   --notification-background-color:  #f3f4f4;
+  --notification-primary-title: rgba(0, 123, 255, 0.815);
   --notification-panel-color: #e6e7e7;
   --notfication-timestamp-color: rgb(122, 121, 121);
-  --notification-update-color: #017bb4d0;
+  --notification-update-color: rgba(4, 98, 199, 0.904);
 
-  --home-primary-title-color: #ffbc05;
-  --home-primary-title-background-color: #ffbc052f;
+  --home-primary-title-color: #ff952b;
+  --home-primary-title-background-color: #ff993349;
   --state-detail-title-color: #9966ff;
   --state-detail-title-background-color: #9966ff31;
 

@@ -8,6 +8,7 @@
   top: 65px; 
   right: 4%;
   width: 25rem;
+  letter-spacing: 0.5px;
   height: 60vh;
   border-radius: 8px;
   background-color: var(--notification-background-color);
@@ -19,6 +20,13 @@
 .notification::-webkit-scrollbar { 
   width: 4px;
   background: transparent;
+}
+
+.primaryDate {
+  margin: 10px 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--notification-primary-title);
 }
 
 .notificationPanel {

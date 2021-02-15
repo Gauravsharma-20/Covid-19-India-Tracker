@@ -20,6 +20,7 @@ td {
   border-radius: 6px;
   padding: 8px 11px;
   font: 15px;
+  letter-spacing: 0.5px;
   text-align: center;
 }
 
@@ -54,7 +55,7 @@ td .table-data-delta {
   border: none;
   outline: none;
   border-radius: 4px;
-  margin-left: 6px;
+  margin: 3px 6px;
   padding: 0px 10px;
   color: var(--table-font-color);
   background-color: var(--header-color);

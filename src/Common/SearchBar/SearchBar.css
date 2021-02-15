@@ -9,6 +9,7 @@
 .search-bar input {
   padding: 1rem 1rem 1rem 3rem;
   width: 35rem;
+  letter-spacing: 0.5px;
   height: 3.5rem;
   border-radius: 5px;
   outline: none;
@@ -30,6 +31,7 @@
   position:absolute;
   top: 65px;
   width: 35rem;
+  letter-spacing: 0.5px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -77,10 +79,12 @@
 @media only screen and (max-width: 1000px) {
   .search-bar input {
     width: 17rem;
+    letter-spacing: 0.2px;
   }
   .suggestions-container {
     width: 17rem;
     font-size: 16px;
+    letter-spacing: 0.2px;
   }
   .fa-arrow-circle-right {
     font-size: 12px !important;
