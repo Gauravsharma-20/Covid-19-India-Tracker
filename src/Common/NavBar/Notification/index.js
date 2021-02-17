@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import {fetchNotificationData} from '../../../storage/actions';
 
-import timeAgo from '../../../utils/Helper/timeAgo';
+import { timeAgo } from '../../../utils/Helper';
 
 import './Notification.css';
 

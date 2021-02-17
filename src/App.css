@@ -35,6 +35,10 @@
   --cards-vaccinated-color: #ff80b3;
   --cards-vaccinated-background-color: rgba(219,85,129,.12549019607843137);
 
+  --delta-switch-color1:#ccc;
+  --delta-switch-color2:#2196F3;
+  --delta-switch-slider-color:white;
+
   --data-color: #f3f4f4;
   --data-hover-color: #e8e8e9;
   --header-color: #dddede;

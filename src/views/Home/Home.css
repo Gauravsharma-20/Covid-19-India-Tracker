@@ -10,7 +10,7 @@
   color: var(--home-primary-title-color);
   background-color: var(--home-primary-title-background-color);
   border-radius: 10px;
-  padding: 10px 23px;
+  padding: 5px 10px;
 }
 
 @media only screen and (max-width: 1000px) {

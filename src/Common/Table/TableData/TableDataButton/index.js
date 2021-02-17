@@ -2,99 +2,96 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import StateCodes from '../../../../utils/StateCodes.json';
+import { numberFormating } from '../../../../utils/Helper';
 
 import '../../Table.css';
 
-class TableDataButton extends React.Component {
 
-  numberFormating(val) {
-    if (val >= 10000000) {
-      val = (val / 10000000).toFixed(2) + 'Cr';
-    } else if (val >= 100000) {
-      val = (val / 100000).toFixed(2) + 'L';
-    } else if(val >= 1000) {
-       val = (val/1000).toFixed(2) + 'K';
-    }
-    return val;
-  }
+const TableDataButton = (props) => {
 
+
+  const ConditionalWrapper = ({ link, children }) => (link?
+    <Link to={`/state/${props.currState}`}>
+      {children}
+    </Link>
+    : children
+  );
   
-  render() {
-    
-    let data = '-', delta;
-    const title = this.props.title;
-    
-    //For Data
-    if(title!=='State/UT') {
 
-      if(['Tested', 'Vaccinated', 'Population'].includes(title)) {
+  let data = '-', delta;
+  const title = props.title;
+  
+  //For Data
+  if(title!=='State/UT') {
 
-        if(this.props.data!==undefined||this.props.data!==null) {
-          data = this.numberFormating(this.props.data);
+    if(['Tested', 'Vaccinated', 'Population'].includes(title)) {
 
-        }
+      if(props.data!==undefined||props.data!==null) {
+        data = numberFormating(props.data);
 
-        if(title!=='Population') {
-          delta = this.numberFormating(this.props.delta);
+      }
 
-        } else {
-          delta = 'NaN';
-        }
+      if(title!=='Population') {
+        delta = numberFormating(props.delta);
 
       } else {
-        data = Math.round((this.props.data + Number.EPSILON) * 100) / 100; //rounding off
-        data = new Intl.NumberFormat('en-IN').format(data);
-        delta =  new Intl.NumberFormat('en-IN').format(this.props.delta);
-
+        delta = 'NaN';
       }
-
-      if(data==='NaN') {
-        data = 0;
-      }
-
-      if(title.includes('Ratio')) {
-        data += '%';
-      }
-
-      if(data===undefined) {
-        data = '-';
-      }
-      
-    } else {
-        if(this.props.data in StateCodes) {
-          data =  StateCodes[this.props.data];
-        } else {
-          data = this.props.data;
-        }
-    }
-
-    //For Delta
-    if(delta==='NaN'||delta===undefined||title==='State/UT') {
-      delta = ' ';
 
     } else {
-      delta = (
-      <div className="table-data-delta" style={this.props.style}>
-        {delta}
-        <i className="fa fa-arrow-up" aria-hidden="true"></i>
-      </div>
-      );
+      data = Math.round((props.data + Number.EPSILON) * 100) / 100;
+      data = new Intl.NumberFormat('en-IN').format(data);
+      delta =  new Intl.NumberFormat('en-IN').format(props.delta);
+
     }
 
+    if(data==='NaN') {
+      data = 0;
+    }
 
-    return (
-      <td className="table-button-container">
-        <Link to={`/state/${this.props.currState}`}>
-          <div>
-            {delta}
-            <div style={{textAlign: 'center'}}>
-              {data}
-            </div>
-          </div>
-        </Link>
-      </td>
+    if(title.includes('Ratio')) {
+      data += '%';
+    }
+
+    if(data===undefined) {
+      data = '-';
+    }
+    
+  } else {
+      if(props.data in StateCodes) {
+        data =  StateCodes[props.data];
+      } else {
+        data = props.data==='Unknown'?'-':props.data;
+      }
+  }
+
+
+  //For Delta
+  if(delta==='NaN'||delta===undefined||title==='State/UT') {
+    delta = ' ';
+
+  } else {
+    delta = (
+    <div className="table-data-delta" style={props.style}>
+      {delta}
+      <i className="fa fa-arrow-up" aria-hidden="true"></i>
+    </div>
     );
-  };
+  }
+
+
+  return (
+    <td className="table-button-container">
+      <ConditionalWrapper link={props.link}>
+        <div>
+          {delta}
+          <div style={{textAlign: 'center'}}>
+            {data}
+          </div>
+        </div>
+      </ConditionalWrapper>
+    </td>
+  );
 }
 
 export default TableDataButton;

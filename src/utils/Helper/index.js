@@ -1,4 +1,17 @@
 
+
+const numberFormating = (val) => {
+  if (val >= 10000000) {
+    val = (val / 10000000).toFixed(2) + 'Cr';
+  } else if (val >= 100000) {
+    val = (val / 100000).toFixed(2) + 'L';
+  } else if(val >= 1000) {
+     val = (val/1000).toFixed(2) + 'K';
+  }
+  return val;
+};
+
+
 const timeAgo = (date) => {
   let seconds = Math.floor((new Date() - date)/1000);
   let interval = seconds / 31536000;
@@ -25,4 +38,4 @@ const timeAgo = (date) => {
   return Math.floor(seconds) + " seconds";
 };
 
-export default timeAgo;
+export { timeAgo , numberFormating };

@@ -15,6 +15,7 @@
   box-shadow:  2px 8px 6px rgb(0 0 0 / 30%);
   overflow-x: hidden;
   overflow-y: scroll;
+  z-index: 2;
 }
 
 .notification::-webkit-scrollbar { 
