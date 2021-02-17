@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Table from '../../Common/Table';
 import Cards from '../../Common/Cards';
+
 import StateCodes from '../../utils/StateCodes.json';
 import NotFound from '../../utils/NotFound';
 

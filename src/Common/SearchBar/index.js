@@ -2,7 +2,7 @@ import React, { useEffect, useState , useRef} from 'react';
 import { Link } from 'react-router-dom';
 
 import StateCodes from '../../utils/StateCodes.json';
-import StateAndDistrictCodes from '../../utils/StatesAndDistricts.json';
+//import StateAndDistrictCodes from '../../utils/StatesAndDistricts.json';
 
 import './SearchBar.css';
 
@@ -59,17 +59,18 @@ const SearchBar = () => {
           }
       });
     
-    // const districtSearchResults = Object.entries(StateAndDistrictCodes.states).filter(
-    //   ([key,value]) => {
-    //     const districtSuggestions = value.filter(
-    //       (val) => {
-    //         if(val.toLowerCase().startsWith(debouncedTerm.toLowerCase())) {
-    //           return [key,value];
-    //         }
-    //       }
-    //     );
-    //     searchResults.push(districtSuggestions);
-    //   });
+  /*  const districtSearchResults = Object.entries(StateAndDistrictCodes.states).filter(
+      ([key,value]) => {
+        const districtSuggestions = value.filter(
+          (val) => {
+            if(val.toLowerCase().startsWith(debouncedTerm.toLowerCase())) {
+              return [key,value];
+            }
+          }
+        );
+        searchResults.push(districtSuggestions);
+      });
+    */
       
     setResults(searchResults);
   }, [debouncedTerm]);

@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 import {fetchNotificationData} from '../../../storage/actions';
 
 import { timeAgo } from '../../../utils/Helper';
+import NotFound from '../../../utils/NotFound';
 
 import './Notification.css';
 
 
 const bellIconInactive = 'far fa-bell';
 const bellIconActive = 'fa fa-bell';
+const NOTIFICATION_DATA_REFRESH_RATE = 600000;
 
 
 const NotificationComponent = (props) => {
@@ -38,17 +40,36 @@ const NotificationComponent = (props) => {
   }, []);
 
 
-  //Fetch Notification Data
+  //Fetching and Updating Notification Data
   useEffect(() => {
-    props.fetchNotificationData();
+
+    const getNotificationData = () => {
+      try{
+        props.fetchNotificationData();
+      } catch(err) {
+        return <NotFound error={err}/>;
+      }
+    };
+
+    getNotificationData();
+
+    setInterval(getNotificationData, NOTIFICATION_DATA_REFRESH_RATE);
+
   }, []);
 
-  useEffect(()=>setBellIcon(open?bellIconActive:bellIconInactive), [open]);
+  //For Bell Icon
+  useEffect(
+    () => setBellIcon(open?bellIconActive:bellIconInactive)
+  , [open]);
+
+
   let currDay,primaryDateFlag;
 
   const notificationPanel = props.notificationData.slice(0).reverse().map((noti) => {
+
     const notificationTimestamp = timeAgo(noti.timestamp*1000);
     const notificationUpdate = noti.update;
+    
     const date = new Date(noti.timestamp*1000);
     const newMonth = date.toLocaleString('default', { month: 'short' });
     const newDay = date.getDate();
@@ -75,6 +96,7 @@ const NotificationComponent = (props) => {
         </div>
       </React.Fragment>
     );
+
   });
 
 
@@ -87,7 +109,7 @@ const NotificationComponent = (props) => {
         </div>
       </div>
     </div>
-   );
+  );
 
 };
 

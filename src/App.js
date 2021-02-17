@@ -11,9 +11,23 @@ import { fetchStateData } from './storage/actions';
 import './App.css';
 
 
+const STATE_DATA_REFRESH_RATE = 1200000; 
+
 class App extends React.Component {
+
   componentDidMount() {
-    this.props.fetchStateData();
+
+    const getStateData = () => {
+      try{
+        this.props.fetchStateData();
+      } catch(err) {
+        return <NotFound error={err}/>;
+      }
+    };
+
+    getStateData();
+
+    setInterval(getStateData, STATE_DATA_REFRESH_RATE);
   }
 
   
@@ -40,6 +54,13 @@ class App extends React.Component {
 }
 
 export default connect(null,{ fetchStateData })(App);
+
+
+
+
+
+
+
 
 
 

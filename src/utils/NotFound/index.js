@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 
 import './NotFound.css';
 
-const NotFound = () => {
+
+const NotFound = ({error='404 - Not Found!'}) => {
   return (
   <div className="not-found-container">
-    <p>404 - Not Found!</p>
+    <p>{error}</p>
     <Link to="/">
         Go Home
       </Link>

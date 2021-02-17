@@ -7,57 +7,62 @@ import Loader from '../../utils/Loader';
 import './Cards.css';
 
 
-class Cards extends React.Component {
-  
-  render() {
+const icons = {
+  recovered: 'fa fa-heartbeat',
+  active: 'fa fa-medkit',
+  confirmed: 'fa fa-check-circle',
+  deceased: 'fa fa-heart',
+};
 
-    if(!this.props.data||this.props.data===undefined) {
+
+const Cards = (props) => {
+
+    if(!props.data||props.data===undefined) {
       return <Loader />;
     }
 
-    const {confirmed, recovered, deceased} = this.props.data;
-    const {confirmed: confirmedDelta , recovered: recoverdDelta, deceased: deceasedDelta} = this.props.delta;
+    const {confirmed, recovered, deceased} = props.data;
+    const {confirmed: confirmedDelta , recovered: recoverdDelta, deceased: deceasedDelta} = props.delta;
 
     //active data is not provided by API
     const active = confirmed-recovered-deceased;
 
     //Vaccine doesn't have a delta available
-    const vaccinated = this.props.data.vaccinated;
+    const vaccinated = props.data.vaccinated;
 
-    return (
-      <div>
+  return (
+    <div>
       <div className="cards">
         <CardItem 
           title='Confirmed' 
           data={confirmed} 
           delta={confirmedDelta} 
-          icon={'fa fa-check-circle'}
+          icon={icons.confirmed}
         />
         <CardItem 
           title='Active' 
           data={active} 
           delta={null} 
-          icon={'fa fa-medkit'} 
+          icon={icons.active} 
         />
         <CardItem 
           title='Recovered' 
           data={recovered} 
           delta={recoverdDelta} 
-          icon={'fa fa-heartbeat'} 
+          icon={icons.recovered} 
         />
         <CardItem 
           title='Deceased' 
           data={deceased} 
           delta={deceasedDelta} 
-          icon={'fa fa-heart'} 
+          icon={icons.deceased} 
         />
       </div>
       <div className="vaccinatedContainer">
         <Vaccinated data={vaccinated} />
       </div>
-      </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Cards;

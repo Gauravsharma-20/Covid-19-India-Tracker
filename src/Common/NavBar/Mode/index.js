@@ -12,6 +12,7 @@ const Mode = () =>{
   const [darkMode, setDarkMode] = useState(false);
   const [modeIcon, setModeIcon] = useState(darkModeIcon);
 
+  
   const theme = {
     dark: {
       bodyColor: '#161625',
