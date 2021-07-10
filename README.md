@@ -2,6 +2,7 @@
 
 ### Overview
 COVID 19 Tracker Web Application for important stats like Confirmed, Active, Recovered, Deceased and Vaccinated cases for all Indian States and Cities with delta change toggle on weekly or daily basis and Notification update for new information. (light and dark mode) 
+
 Project built mainly to learn React, React-Router and Redux. React-router for routing to State’s statistics, Redux-thunk as a middleware and complete project built on React.
 
 
