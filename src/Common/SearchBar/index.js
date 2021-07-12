@@ -80,9 +80,9 @@ const SearchBar = () => {
   const suggestions = results.map( ([key,value]) => {
     
     return (
-      <div key={key} className="suggestion-box">
+      <div key={key} >
       <Link to={`/state/${key}`}>
-      <div>
+      <div className="suggestion-box">
         <span className="suggestion-value">{value}</span>
         <span className="suggestion-key">
           <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>

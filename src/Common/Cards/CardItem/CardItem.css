@@ -5,7 +5,7 @@
 
 .card-item:hover {
   background-color: var(--default-hover-color);
-  transition: 0.6s;
+  transition: 0.3s;
 }
 
 .card-item h5, h4, h3{
