@@ -46,15 +46,16 @@ const TableData = (props) => {
       const testedDelta = value[deltaDays]?.tested;
       const vaccinatedDelta = value[deltaDays]?.vaccinated1;
 
+      const {link: addLink} = props;
 
       return (
-        <tr className="table-data-row" key={stateCode}>
+        <tr className={`{addLink? "state-data-row": ""} table-data-row`} key={stateCode}>
           <TableDataButton 
             title='State/UT' 
             data={stateCode}
             currState={stateCode}
             style={{textAlign: 'center'}}
-            link={props.link}
+            link={addLink}
           />
           <TableDataButton 
             title='Confirmed' 
@@ -62,13 +63,13 @@ const TableData = (props) => {
             currState={key}
             delta={confirmedDelta} 
             style={{color: confirmedDeltaArrowColor}}
-            link={props.link}
+            link={addLink}
           />
           <TableDataButton 
             title='Active' 
             currState={stateCode}
             data={active}
-            link={props.link}
+            link={addLink}
           />
           <TableDataButton 
             title='Recovered' 
@@ -76,7 +77,7 @@ const TableData = (props) => {
             currState={stateCode}
             delta={recoverdDelta} 
             style={{color: recoveredDeltaArrowColor}}
-            link={props.link}
+            link={addLink}
           />
           <TableDataButton 
             title='Deceased' 
@@ -84,7 +85,7 @@ const TableData = (props) => {
             currState={stateCode}
             delta={deceasedDelta} 
             style={{color:deceasedDeltaArrowColor}}
-            link={props.link}
+            link={addLink}
           />
           <TableDataButton 
           title='Tested' 
@@ -92,7 +93,7 @@ const TableData = (props) => {
           currState={stateCode}
           delta={testedDelta} 
           style={{color:testedDeltaArrowColor}}
-          link={props.link}
+          link={addLink}
           />
           <TableDataButton 
           title='Vaccinated' 
@@ -100,37 +101,37 @@ const TableData = (props) => {
           currState={stateCode}
           delta={vaccinatedDelta} 
           style={{color:vaccinatedDeltaArrowColor}}
-          link={props.link}
+          link={addLink}
           />
           <TableDataButton 
           title='Active Ratio' 
           data={activeRatio}
           currState={stateCode}
-          link={props.link}
+          link={addLink}
           />
           <TableDataButton 
           title='Recovery Ratio' 
           data={recoveryRatio}
           currState={stateCode}
-          link={props.link}
+          link={addLink}
           />
           <TableDataButton 
           title='Case Fatality Ratio' 
           data={caseFatalityRatio} 
           currState={stateCode}
-          link={props.link}
+          link={addLink}
           />
           <TableDataButton 
           title='Test Positivity Ratio' 
           data={testPositivityRatio}
           currState={stateCode}
-          link={props.link}
+          link={addLink}
           />
           <TableDataButton 
           title='Population' 
           data={population}
           stateCode={stateCode}
-          link={props.link}
+          link={addLink}
           />
     </tr>
     );

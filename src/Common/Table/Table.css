@@ -27,6 +27,9 @@ td {
 .table-data-row:hover {
   transform: scale(1.01);
   transition: 0.3s;
+}
+
+.state-data-row:hover {
   cursor: pointer; 
 }
 

@@ -14,9 +14,7 @@ const Table = (props) => {
     return <Loader />;
   }
     
-  const linkFlag = props.primaryTitle!=='Districts'? true:false;
-
-  
+  const linkFlag = props.primaryTitle !== 'Districts'? true:false;  
 
   return (
     <Suspense fallback={<Loader />}>
@@ -39,7 +37,7 @@ const Table = (props) => {
            data={props.data}
            addLink={linkFlag}
            deltaDays={deltaDays}
-           link={props.primaryTitle!=='Districts'?true:false}  
+           link={props.primaryTitle!=='Districts'?true:false} 
            />
         </tbody>
       </table>
