@@ -5,10 +5,12 @@
 }
 
 .vaccinated {
-  display:inline-block;
+  display:flex;
+  flex-direction: column;
   color: var(--cards-vaccinated-color);
   background-color: var(--cards-vaccinated-background-color);
   border-radius: 5px;
   padding: 4px;
+
 }
 

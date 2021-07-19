@@ -26,7 +26,7 @@ const TableData = (props) => {
         recovered, 
         deceased, 
         tested, 
-        vaccinated
+        vaccinated1
       } = value.total;
       
       //active data is not provided by API
@@ -44,7 +44,7 @@ const TableData = (props) => {
       const recoverdDelta = value[deltaDays]?.recovered;
       const deceasedDelta = value[deltaDays]?.deceased;
       const testedDelta = value[deltaDays]?.tested;
-      const vaccinatedDelta = value[deltaDays]?.vaccinated;
+      const vaccinatedDelta = value[deltaDays]?.vaccinated1;
 
 
       return (
@@ -96,7 +96,7 @@ const TableData = (props) => {
           />
           <TableDataButton 
           title='Vaccinated' 
-          data={vaccinated} 
+          data={vaccinated1} 
           currState={stateCode}
           delta={vaccinatedDelta} 
           style={{color:vaccinatedDeltaArrowColor}}

@@ -28,7 +28,8 @@ const Cards = (props) => {
     const active = confirmed-recovered-deceased;
 
     //Vaccine doesn't have a delta available
-    const vaccinated = props.data.vaccinated;
+    const vaccinated1 = props.data.vaccinated1;
+    const vaccinated2 = props.data.vaccinated2;
 
   return (
     <div>
@@ -59,7 +60,7 @@ const Cards = (props) => {
         />
       </div>
       <div className="vaccinatedContainer">
-        <Vaccinated data={vaccinated} />
+        <Vaccinated vaccinated1={vaccinated1} vaccinated2={vaccinated2} />
       </div>
     </div>
   );

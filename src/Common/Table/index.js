@@ -29,6 +29,7 @@ const Table = (props) => {
         </label>
       </div>
       </React.Fragment>
+      
       <table className="covid-table">
         <thead className="myHeader">
           <TableHeader data={props.data} primaryTitle={props.primaryTitle}/>
