@@ -1,9 +1,12 @@
-## Covid-19 Tracker [[Live]](https://brave-mcnulty-9912d2.netlify.app/)
+## Covid-19 Tracker <a href="https://brave-mcnulty-9912d2.netlify.app/" target="_blank">[Live]</a>
 
 ### Overview
-COVID 19 Tracker Web Application for important stats like Confirmed, Active, Recovered, Deceased and Vaccinated cases for all Indian States and Cities with delta change toggle on weekly or daily basis and Notification update for new information. (light and dark mode) 
+COVID 19 Tracker Web Application for important stats like Confirmed, Active, Recovered, Deceased and Vaccinated cases for all Indian States and Cities with delta change toggle on weekly or daily basis and Notification update for new Covid related information. (Light and Dark mode) 
 
 Project built mainly to learn React, React-Router and Redux. React-router for routing to State’s statistics, Redux-thunk as a middleware and complete project built on React.
+
+### DEMO:
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="./static/Demo.gif" width="85%" height="70%"><br>
 
 
 ### Instructions to Run
