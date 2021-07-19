@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -13,45 +13,48 @@ import './App.css';
 
 const STATE_DATA_REFRESH_RATE = 1200000; 
 
-class App extends React.Component {
+const App = (props) => {
 
-  componentDidMount() {
+  useEffect(() => {
 
-    const getStateData = () => {
-      try{
-        this.props.fetchStateData();
-      } catch(err) {
-        return <NotFound error={err}/>;
-      }
-    };
+      const getStateData = () => {
+        try{
+          props.fetchStateData();
+        } catch(err) {
+          //Not allowed to return anything else then cleanup
+          return <NotFound error={err}/>;
+        }
+      };
 
-    getStateData();
+      getStateData();
 
-    setInterval(getStateData, STATE_DATA_REFRESH_RATE);
-  }
+      const timerId = setInterval(getStateData, STATE_DATA_REFRESH_RATE);
+      
+      return () => {
+        clearTimeout(timerId);
+      };
+    });
 
   
-  render() {
-    return (
-      <div className="ui container">
-        <BrowserRouter>
-          <NavBar/>
-          <Switch>
-            <Route 
-              path='/' exact 
-              component={Home} 
-            />
-            <Route 
-              path='/state/:stateCode'
-              component={StateDetail}
-            />
-            <Route component={NotFound} />
-          </Switch>
-        </BrowserRouter>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="ui container">
+      <BrowserRouter>
+        <NavBar/>
+        <Switch>
+          <Route 
+            path='/' exact 
+            component={Home} 
+          />
+          <Route 
+            path='/state/:stateCode?'
+            component={StateDetail}
+          />
+          <Route component={NotFound} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
+};
 
 export default connect(null,{ fetchStateData })(App);
 

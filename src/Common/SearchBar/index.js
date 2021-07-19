@@ -7,6 +7,7 @@ import StateCodes from '../../utils/StateCodes.json';
 import './SearchBar.css';
 
 
+const DEBOUNCING_TIME = 200;
 
 const SearchBar = () => {
 
@@ -40,7 +41,7 @@ const SearchBar = () => {
 
     const timerId = setTimeout(() => {
       setDebouncedTerm(term);
-    },200);
+    },DEBOUNCING_TIME);
 
     return () => {
       clearTimeout(timerId);
