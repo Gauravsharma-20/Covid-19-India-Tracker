@@ -57,17 +57,3 @@ const App = (props) => {
 };
 
 export default connect(null,{ fetchStateData })(App);
-
-
-
-
-
-
-
-
-
-
-
-/*  
-  <SearchBar onFormSubmit={this.onFormSubmit} />
-*/
