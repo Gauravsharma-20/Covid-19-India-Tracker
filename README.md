@@ -1,4 +1,4 @@
-## Covid-19 Tracker <a href="https://brave-mcnulty-9912d2.netlify.app/" target="_blank">[Live]</a>
+## Covid-19 Tracker <a href="https://covid-19-in-tracker.netlify.app/" target="_blank">[Live]</a>
 
 ### Overview
 COVID 19 Tracker Web Application for important stats like Confirmed, Active, Recovered, Deceased and Vaccinated cases for all Indian States and Cities with delta change toggle on weekly or daily basis and Notification update for new Covid related information. (Light and Dark mode) 
